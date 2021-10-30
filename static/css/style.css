@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    padding: 20px;
+    line-height: 50px;
+    border: 2px solid cornflowerblue;
+    text-align: -webkit-center;
+    width: 870px;
+    box-shadow: 1px 1px 10px cadetblue;
+    margin-top: 15px;
+    }
+
+span {
+    color: red;
+    text-decoration-line: underline;
+    font-style: italic;
+}
+
+.guess {
+    border: 2px solid black;
+    width: fit-content;
+    background-color: rgb(79 167 237);
+    padding: 15px;
+}
+
+input {
+    width: 155px;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+button {
+    box-shadow: 1px 1px 3px black;
+    background-color: rgb(255 0 0);
+    border: 1px solid black;
+    padding: 5px;
+    width: 100px;
+}
+
+.reset {
+    background-color: mediumpurple;
+    width: 140px;
+    margin-top: 15px;
+}
+
+/* I like creating my own style sheets :) */
