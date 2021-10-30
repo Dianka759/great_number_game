@@ -36,6 +36,7 @@
 
     {% if session['guesses'] > 5 %}
         <h2>Fail!</h2>
+        <h4>It took you more than 5 guesses.</h4>
         <p>Maybe try your luck with a different number?</p>
         </form>
         <form action="/restart">
