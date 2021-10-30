@@ -10,13 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <title>The great number game</title>
-<style>
-
-.hint {
-    background-color: {{ color }};
-}
-
-</style>
+    <style>
+        .hint {
+            background-color: {{color}};
+        }
+    </style>
 </head>
 <body>
 
@@ -24,20 +22,32 @@
         <h1>Welcome to <span>the</span> greatest guessing game ever made!</h1>
         <p>I am thinking of a number between 1 and 100, can you guess which one? </p>
         <div class="hint">
-        <h3>{{display["message"]}}</h3>
-    </div>
+            <h3>{{display["message"]}}</h3>
+        </div>
         <h4>Total guesses: {{session['guesses']}}.</h4>
         <div class="guess">
             <h2>Guessing time!</h2>
             <form action="/guess" method="POST">
                 <input type="number" name="guess" placeholder="Gimme your best guess!">
                 <button>Submit</button>
-            </form>
-            <form action="/restart">
-                <button class="reset">Restart the game!</button>
-            </form>
         </div>
-            <h3>{{previous_guess["message"]}}</h3>
+        <h3>{{previous_guess["message"]}}</h3>
+
+
+    {% if session['guesses'] > 5 %}
+        <h2>Fail!</h2>
+        <p>Maybe try your luck with a different number?</p>
+        </form>
+        <form action="/restart">
+            <button class="reset">Restart the game!</button>
+        </form>
+    {% elif session["game"] == session["number"] %}
+        </form>
+        <form action="/restart">
+            <button class="reset">Restart the game!</button>
+        </form>
+    {% endif %}
+
     </div>
 
 

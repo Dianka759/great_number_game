@@ -45,7 +45,7 @@ def start():
 # Informing the player how many guesses have been taken.
 @app.route('/guess', methods=["POST"])                         #with every guess, the count goes up by 1.
 def guess():
-    session["game"] = int(request.form["game"])
+    session["game"] = int(request.form["guess"])
     session["guesses"] += 1
     return redirect('/')
 
